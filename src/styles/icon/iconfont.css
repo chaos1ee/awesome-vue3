@@ -1,0 +1,84 @@
+@font-face {
+  font-family: element-icons;
+  src: url(iconfont.ttf) format('truetype');
+}
+
+.el-icon-jisuanqi::before {
+  content: '\e8ab';
+}
+
+.el-icon-kabao::before {
+  content: '\e8ac';
+}
+
+.el-icon-duanxin::before {
+  content: '\e8ad';
+}
+
+.el-icon-shangcheng::before {
+  content: '\e8ae';
+}
+
+.el-icon-rili::before {
+  content: '\e8af';
+}
+
+.el-icon-shezhi::before {
+  content: '\e8b0';
+}
+
+.el-icon-naozhong::before {
+  content: '\e8b1';
+}
+
+.el-icon-tianqi::before {
+  content: '\e8b2';
+}
+
+.el-icon-ditu::before {
+  content: '\e8b3';
+}
+
+.el-icon-zhaopian::before {
+  content: '\e8b4';
+}
+
+.el-icon-youjian::before {
+  content: '\e8b5';
+}
+
+.el-icon-xiangji::before {
+  content: '\e8b6';
+}
+
+.el-icon-shengji::before {
+  content: '\e8b7';
+}
+
+.el-icon-yinle::before {
+  content: '\e8b8';
+}
+
+.el-icon-luyin::before {
+  content: '\e8b9';
+}
+
+.el-icon-zhaoming::before {
+  content: '\e8ba';
+}
+
+.el-icon-shipinzhongxin::before {
+  content: '\e8bb';
+}
+
+.el-icon-diantai::before {
+  content: '\e8bc';
+}
+
+.el-icon-youxi::before {
+  content: '\e8bd';
+}
+
+.el-icon-dianhua::before {
+  content: '\e8be';
+}

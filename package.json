@@ -1,0 +1,68 @@
+{
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "commit": "cz",
+    "dev": "vite",
+    "serve": "vite preview",
+    "gen": "bash ./scripts/gen.sh",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
+    "lint:script": "eslint --fix --ext .ts,vue --ignore-path .gitignore .",
+    "lint:style": "stylelint src/**/*.{css,scss,vue}",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chart.js": "^3.4.1",
+    "element-plus": "1.0.2-beta.54",
+    "monaco-editor": "0.26.1",
+    "sass": "^1.35.1",
+    "tailwindcss": "^2.2.4",
+    "vue": "^3.0.5",
+    "vue-i18n": "^9.1.6",
+    "vue-router": "4",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@intlify/vite-plugin-vue-i18n": "^2.3.2",
+    "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "@vitejs/plugin-vue": "^1.2.4",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "@vuedx/typescript-plugin-vue": "^0.7.4",
+    "autoprefixer": "^10.2.6",
+    "babel-plugin-component": "^1.1.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.30.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.13.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "postcss": "^8.3.5",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-standard": "^22.0.0",
+    "typescript": "^4.3.2",
+    "vite": "^2.4.0",
+    "vite-plugin-html": "^2.0.7",
+    "vite-plugin-style-import": "^1.0.1",
+    "vue-tsc": "^0.0.24"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.{css,scss,vue}": "stylelint --fix",
+    "*": "prettier -w -u"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

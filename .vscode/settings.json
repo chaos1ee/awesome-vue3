@@ -1,0 +1,43 @@
+{
+  "css.validate": false,
+  "editor.fontSize": 14,
+  "editor.letterSpacing": 0.2,
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {},
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.minimap.scale": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Source Code Pro",
+  "editor.fontWeight": "bold",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.suggestSelection": "first",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 200,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "scss.lint.unknownAtRules": "ignore",
+  "svgviewer.enableautopreview": true,
+  "terminal.integrated.automationShell.osx": "",
+  "terminal.integrated.experimentalLinkProvider": false,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Source Code Pro",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.keystyle": "nested"
+}

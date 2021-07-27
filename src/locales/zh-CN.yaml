@@ -1,0 +1,59 @@
+en: English
+zh-CN: 简体中文
+languages: 多语言
+dashboard: 仪表盘
+submit: 提交
+reset: 重置
+region: 地区
+lang: 语言
+player: 玩家
+action: 操作
+player_management: 玩家管理
+player_list: 玩家列表
+player_id: 玩家 Id
+player_name: 玩家名称
+hero_level: 玩家等级
+city_level: 城市等级
+kg_tag: Kg Tag
+last_login: 上次登录时间
+system_management: 系统管理
+server_operation: 服务器维护管理
+code: 代码
+ip_white_list: IP 白名单
+fpid_white_list: Fpid 白名单
+already_latest_no_need_release: 已是最新版本无需发布
+gateway_management: 网关管理
+ban_player: 封禁玩家
+ban_type: 封禁类型
+player_type: 玩家类型
+ban_reason: 封禁原因
+ban_duration: 封禁时长
+please_input_id: 请输入Id
+normal: 普通
+paying_players_review: 付费玩家需要 review
+plugin: 外挂
+refund: 退款
+buy_resources: 买资源
+surrogate: 代充
+sensitive_word_filtering: 敏感词过滤
+minute: 分钟
+hour: 小时
+day: 天
+forever: 永久
+ban: 封禁
+log: 日志
+review: 审核
+game_players_count: 游戏玩家数量统计
+search: 搜索
+view_log: 查看日志
+activity: 活动
+reissue_rewards: 补发奖励
+return_players: 回流玩家
+gm_tools: GM 工具
+database_tool: 数据库工具
+upload_file: 上传文件
+upload_to_server: 上传到服务器
+select_files: 选取文件
+upload_tip: 只能上传 jpg/png 文件，且不超过 500kb
+xhr: XMLHttpRequest
+pay: 支付

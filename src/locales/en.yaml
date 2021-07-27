@@ -1,0 +1,59 @@
+en: English
+zh-CN: 简体中文
+languages: Languages
+dashboard: Dashboard
+submit: Submit
+reset: Reset
+region: Region
+lang: lang
+player: Player
+action: Action
+player_management: Player Management
+player_list: Player List
+player_id: Player Id
+player_name: Player Name
+hero_level: Hero Level
+city_level: City Level
+kg_tag: Kg Tag
+last_login: Last Login
+system_management: System Management
+server_operation: Server Operation
+code: Code
+ip_white_list: IP White List
+fpid_white_list: Fpid White List
+already_latest_no_need_release: Already the latest version, no need to release
+gateway_management: Gateway Management
+ban_player: Ban Player
+ban_type: Ban Type
+player_type: Player Type
+ban_reason: Ban Reason
+ban_duration: Ban Duration
+please_input_id: Please input ID
+normal: Normal
+paying_players_review: Paying players need to review
+plugin: Plugin
+refund: Refund
+buy_resources: Buy Resources
+surrogate: Surrogate
+sensitive_word_filtering: Sensitive word filtering
+minute: minute | minutes
+hour: hour | hours
+day: day | days
+forever: Forever
+ban: Ban
+log: Log
+review: Review
+game_players_count: Game players counts
+search: Search
+view_log: View log
+activity: Activity
+reissue_rewards: Reissue rewards
+return_players: Return players
+gm_tools: GM Tools
+database_tool: Database Tool
+upload_file: Upload file
+upload_to_server: Upload to server
+select_files: Select files
+upload_tip: Only upload jpg/png files, and no more than 500kb
+xhr: XMLHttpRequest
+pay: Pay
