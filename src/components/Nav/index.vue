@@ -1,11 +1,11 @@
 <template>
-  <nav :style="{ backgroundColor }">
+  <nav :style="{ backgroundColor }" style="border-right: 1px solid #e5e7eb">
     <el-menu
       class="el-menu-vertical"
       :collapse="isCollapse"
       :unique-opened="true"
       :background-color="backgroundColor"
-      text-color="#fff"
+      :text-color="textColor"
       :active-text-color="activeTextColor"
       :router="true"
       :default-active="activePath"
@@ -25,13 +25,17 @@ export default defineComponent({
   name: 'KgMenu',
   components: { KgNavItems },
   props: {
+    textColor: {
+      type: String,
+      default: '#111827',
+    },
     backgroundColor: {
       type: String,
-      default: '#4B5563',
+      default: '#ffffff',
     },
     activeTextColor: {
       type: String,
-      default: '#ff7800',
+      default: '#FF5A00',
     },
   },
   setup() {

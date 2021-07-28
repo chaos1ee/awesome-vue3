@@ -9,7 +9,7 @@
     <el-table-column label="IP">
       <template #default="scope">{{ scope.row }}</template>
     </el-table-column>
-    <el-table-column :label="t('action')" width="60">
+    <el-table-column :label="t('action')" width="80">
       <el-button
         size="mini"
         type="danger"

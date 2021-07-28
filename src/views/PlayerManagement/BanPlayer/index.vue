@@ -1,30 +1,17 @@
 <template>
-  <el-tabs v-model="activeName">
-    <el-tab-pane :label="t('ban')" name="1">
-      <el-card>
-        <template #header>
-          <h2>{{ t('ban') }}</h2>
-        </template>
+  <el-card>
+    <el-tabs v-model="activeName">
+      <el-tab-pane :label="t('ban')" name="1">
         <kg-ban-player-form></kg-ban-player-form>
-      </el-card>
-    </el-tab-pane>
-    <el-tab-pane :label="t('log')" name="2">
-      <el-card>
-        <template #header>
-          <h2>{{ t('log') }}</h2>
-        </template>
+      </el-tab-pane>
+      <el-tab-pane :label="t('log')" name="2">
         <kg-log-list></kg-log-list>
-      </el-card>
-    </el-tab-pane>
-    <el-tab-pane :label="t('review')" name="3">
-      <el-card>
-        <template #header>
-          <h2>{{ t('review') }}</h2>
-        </template>
+      </el-tab-pane>
+      <el-tab-pane :label="t('review')" name="3">
         <kg-review></kg-review>
-      </el-card>
-    </el-tab-pane>
-  </el-tabs>
+      </el-tab-pane>
+    </el-tabs>
+  </el-card>
 </template>
 
 <script lang="ts">

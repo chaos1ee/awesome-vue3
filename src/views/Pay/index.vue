@@ -1,5 +1,5 @@
 <template>
-  <div>pay</div>
+  <el-card>pay</el-card>
 </template>
 
 <script lang="ts">
@@ -7,9 +7,6 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'KgPay',
-  setup(props) {
-    // do something
-  },
 })
 </script>
 

@@ -1,7 +1,9 @@
 <template>
-  <el-button @click="getUserInfo"> Get user </el-button>
-  <el-button @click="getStatusCode150"> Get status code 150 </el-button>
-  <el-button @click="getStatusCode200"> Get status code 200 </el-button>
+  <el-card>
+    <el-button @click="getUserInfo"> Get user </el-button>
+    <el-button @click="getStatusCode150"> Get status code 150 </el-button>
+    <el-button @click="getStatusCode200"> Get status code 200 </el-button>
+  </el-card>
 </template>
 
 <script lang="ts">

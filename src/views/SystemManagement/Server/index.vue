@@ -9,19 +9,19 @@
   <div class="grid grid-cols-3 gap-6">
     <el-card :body-style="cardBodyStyles">
       <template #header>
-        <h2>{{ t('code') }}</h2>
+        <div class="text-xl">{{ t('code') }}</div>
       </template>
       <kg-editor :value="data" :options="options"></kg-editor>
     </el-card>
     <el-card :body-style="cardBodyStyles">
       <template #header>
-        <h2>{{ t('ip_white_list') }}</h2>
+        <div class="text-xl">{{ t('ip_white_list') }}</div>
       </template>
       <kg-ip-white-list></kg-ip-white-list>
     </el-card>
     <el-card :body-style="cardBodyStyles">
       <template #header>
-        <h2>{{ t('fpid_white_list') }}</h2>
+        <div class="text-xl">{{ t('fpid_white_list') }}</div>
       </template>
       <kg-fpid-white-list></kg-fpid-white-list>
     </el-card>

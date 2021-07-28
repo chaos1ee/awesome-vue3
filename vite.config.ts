@@ -36,7 +36,7 @@ export default defineConfig(({ mode }) => {
             ensureStyleFile: true,
             resolveStyle: (name) => {
               name = name.slice(3)
-              return `element-plus/lib/src/${name}.css`
+              return `./src/styles/element-plus/${name}.css`
             },
             resolveComponent: (name) => {
               return `element-plus/lib/${name}`
@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => {
         '/@': resolve('src'),
         '/components': resolve('src/components'),
         '/views': resolve('src/views'),
+        'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
     },
     server: {
@@ -62,9 +63,9 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             jsonWorker: [`${prefix}/language/json/json.worker`],
-            cssWorker: [`${prefix}/language/css/css.worker`],
-            htmlWorker: [`${prefix}/language/html/html.worker`],
-            tsWorker: [`${prefix}/language/typescript/ts.worker`],
+            // cssWorker: [`${prefix}/language/css/css.worker`],
+            // htmlWorker: [`${prefix}/language/html/html.worker`],
+            // tsWorker: [`${prefix}/language/typescript/ts.worker`],
             editorWorker: [`${prefix}/editor/editor.worker`],
           },
         },

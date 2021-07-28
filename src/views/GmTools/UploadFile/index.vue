@@ -1,31 +1,33 @@
 <template>
-  <div class="w-1/4">
-    <el-upload
-      ref="uploadRef"
-      class="upload-demo"
-      action="https://api.anonfiles.com/upload/"
-      :on-remove="handleRemove"
-      :file-list="fileList"
-      :auto-upload="false"
-    >
-      <template #trigger>
-        <el-button size="small" type="primary">
-          {{ t('select_files') }}
-        </el-button>
-      </template>
-      <el-button
-        style="margin-left: 10px"
-        size="small"
-        type="success"
-        @click="submitUpload"
+  <el-card>
+    <div class="w-1/4">
+      <el-upload
+        ref="uploadRef"
+        class="upload-demo"
+        action="https://api.anonfiles.com/upload/"
+        :on-remove="handleRemove"
+        :file-list="fileList"
+        :auto-upload="false"
       >
-        {{ t('upload_to_server') }}
-      </el-button>
-      <template #tip>
-        <div class="el-upload__tip">{{ t('upload_tip') }}</div>
-      </template>
-    </el-upload>
-  </div>
+        <template #trigger>
+          <el-button size="small" type="primary">
+            {{ t('select_files') }}
+          </el-button>
+        </template>
+        <el-button
+          style="margin-left: 10px"
+          size="small"
+          type="success"
+          @click="submitUpload"
+        >
+          {{ t('upload_to_server') }}
+        </el-button>
+        <template #tip>
+          <div class="el-upload__tip">{{ t('upload_tip') }}</div>
+        </template>
+      </el-upload>
+    </div>
+  </el-card>
 </template>
 
 <script lang="ts">

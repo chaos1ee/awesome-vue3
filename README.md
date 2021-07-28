@@ -92,30 +92,17 @@ yarn gen <type> <name>
 
 ## 配置主题
 
-在 [在线生成主题](https://element-plus.github.io/theme-chalk-preview/#/zh-CN) 页面下载主题，然后放到项目下的 /src/styles/theme 目录中，最后修改一下 vite.config.ts 中的配置：
+在 [在线生成主题](https://element-plus.github.io/theme-chalk-preview/#/zh-CN) 页面下载主题，然后放到项目下的 /src/styles/element-plus 目录中，并将样式导入到 /src/main.ts 中，
 
-默认配置：
+main.ts
 
 ```typescript
-styleImport({
-  libs: [
-    {
-      libraryName: 'element-plus',
-      esModule: true,
-      ensureStyleFile: true,
-      resolveStyle: (name) => {
-        name = name.slice(3)
-        return `element-plus/lib/src/${name}.css`
-      },
-      resolveComponent: (name) => {
-        return `element-plus/lib/${name}`
-      },
-    },
-  ],
-})
+import './styles/element-plus/index.css'
 ```
 
-新的配置：
+最后修改一下 vite.config.ts 中的配置：
+
+vite.config.ts
 
 ```typescript
 styleImport({
@@ -126,8 +113,8 @@ styleImport({
       ensureStyleFile: true,
       resolveStyle: (name) => {
         name = name.slice(3)
-        // 注意这一行的地址要指到主题文件所在的目录
-        return `./src/styles/element-plus-theme/${name}.css`
+        // 修改这一行的地址，将它指到主题文件所在的目录
+        return `./src/styles/element-plus/${name}.css`
       },
       resolveComponent: (name) => {
         return `element-plus/lib/${name}`

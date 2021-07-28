@@ -6,7 +6,7 @@
     "dev": "vite",
     "serve": "vite preview",
     "gen": "bash ./scripts/gen.sh",
-    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck && cross-env NODE_OPTIONS=--max-old-space-size=8192 vite build",
     "lint:script": "eslint --fix --ext .ts,vue --ignore-path .gitignore .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
     "prepare": "husky install"
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
-    "@intlify/vite-plugin-vue-i18n": "^2.3.2",
+    "@intlify/vite-plugin-vue-i18n": "^2.4.0",
     "@types/node": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
@@ -38,6 +38,7 @@
     "autoprefixer": "^10.2.6",
     "babel-plugin-component": "^1.1.1",
     "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.30.0",
     "eslint-plugin-prettier": "^3.4.0",

@@ -14,7 +14,7 @@
   "ignoreFiles": [
     "./node_modules/**/*",
     "./public/**/*",
-    "./src/styles/theme/**/*",
+    "./src/styles/element-plus/**/*",
     "./dist/**/*"
   ]
 }

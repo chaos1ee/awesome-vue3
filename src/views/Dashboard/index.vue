@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-flow-row grid-cols-3 gap-8">
-    <div><canvas ref="chartRef"></canvas></div>
-  </div>
+  <el-card>
+    <canvas ref="chartRef"></canvas>
+  </el-card>
 </template>
 
 <script lang="ts">
@@ -15,9 +15,11 @@ export default defineComponent({
     const { t } = useI18n()
     const chartRef = ref<ChartItem>()
 
-    onMounted(() => {
+    let chart: Chart | null = null
+
+    function draw() {
       if (chartRef.value) {
-        new Chart(chartRef.value, {
+        chart = new Chart(chartRef.value, {
           type: 'bar',
           data: {
             labels: ['手游', 'PC游戏', '主机游戏'],
@@ -43,13 +45,18 @@ export default defineComponent({
           },
         })
       }
+    }
 
-      window.addEventListener(
-        'localeChange',
-        (e: CustomEventInit<{ locale: string }>) => {
-          console.log('locale', e.detail?.locale)
-        }
-      )
+    onMounted(() => {
+      draw()
+    })
+
+    window.addEventListener('localeChange', () => {
+      if (chart) {
+        chart.destroy()
+      }
+
+      draw()
     })
 
     return {

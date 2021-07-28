@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between bg-gray-600 z-10">
+  <div class="flex items-center justify-between z-10 bg-orange-500">
     <div
       class="flex items-center justify-center header--left"
       :class="{ collapse: isCollapse }"
@@ -7,9 +7,9 @@
       <div v-if="!isCollapse" class="w-8 h-8 ml-4 mr-4">
         <img class="w-8 h-8" src="/@/assets/images/logo.png" alt="logo" />
       </div>
-      <h2 v-if="!isCollapse" class="flex-1">
+      <div v-if="!isCollapse" class="flex-1 text-xl font-bold">
         {{ title }}
-      </h2>
+      </div>
       <el-button type="text" :icon="logo" @click="toogle"></el-button>
     </div>
     <div class="mr-4">
@@ -70,5 +70,14 @@ export default defineComponent({
 img {
   width: 100%;
   height: 100%;
+}
+
+::v-deep(.el-button--text) {
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
 }
 </style>

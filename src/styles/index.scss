@@ -13,23 +13,6 @@ body {
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
-@layer base {
-  h1 {
-    @apply text-2xl;
-  }
-
-  h2 {
-    @apply text-xl;
-  }
-
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-lg;
-  }
-}
-
 .el-menu--collapse {
   .el-submenu {
     &__title > *:not([class|='el-icon']) {
