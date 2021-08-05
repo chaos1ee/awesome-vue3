@@ -1,5 +1,5 @@
 en: English
-zh-CN: 简体中文
+zh-cn: 简体中文
 languages: 多语言
 dashboard: 仪表盘
 submit: 提交
@@ -21,7 +21,6 @@ server_operation: 服务器维护管理
 code: 代码
 ip_white_list: IP 白名单
 fpid_white_list: Fpid 白名单
-already_latest_no_need_release: 已是最新版本无需发布
 gateway_management: 网关管理
 ban_player: 封禁玩家
 ban_type: 封禁类型
@@ -46,14 +45,53 @@ review: 审核
 game_players_count: 游戏玩家数量统计
 search: 搜索
 view_log: 查看日志
-activity: 活动
-reissue_rewards: 补发奖励
-return_players: 回流玩家
 gm_tools: GM 工具
+select_kindom_id: 请选择 Kindom ID
+please_input: 请输入
+registration_date: 注册日期
+query: 查询
 database_tool: 数据库工具
-upload_file: 上传文件
-upload_to_server: 上传到服务器
-select_files: 选取文件
-upload_tip: 只能上传 jpg/png 文件，且不超过 500kb
-xhr: XMLHttpRequest
-pay: 支付
+player_detail: 玩家详情
+ban_login: 禁止登录
+ban_chat: 禁止聊天
+back: 返回
+info: 信息
+nickname: 昵称
+avatar: 头像
+funplus_id: Funplus Id
+privilege: 权限
+race: 种族
+end_novice: End novice
+level: 等级
+exp: 经验值
+language: 语言
+vip_level: Vip 等级
+alliance: 联盟
+guild: 工会
+kingdom_id: Kindom ID
+x_y_axis: X-axis Y-axis
+gender: 性别
+building_id: Building ID
+open_permanent_protective_cover: 开启永久保护罩
+repair_alliance_data: 修复联盟数据
+reset_portrait: 重置 Portrait
+reset_fpid: 重置 Fpid
+reason: 原因
+memo: 备忘
+end_time: 结束时间
+resources: 资源
+crystal: 水晶
+grain: 粮食
+wood: 木材
+stone: 石材
+gold: 金子
+basic: 基本
+other: 其它
+lord_experience: 领主经验
+talent_points: 天赋点数
+td_research_technology_points: TD 研究科技点数
+action_points: 行动点数
+hero_experience: 英雄经验
+physical_strength: 体力
+male: 男性
+female: 女性

@@ -1,6 +1,10 @@
 <template>
   <el-card>
-    <canvas ref="chartRef"></canvas>
+    <div class="flex justify-center">
+      <div class="w-1/2">
+        <canvas ref="chartRef"></canvas>
+      </div>
+    </div>
   </el-card>
 </template>
 

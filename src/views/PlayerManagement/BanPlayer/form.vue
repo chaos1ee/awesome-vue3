@@ -23,9 +23,7 @@
       <el-radio-group v-model="formModel.ban_reason">
         <el-radio label="1">
           <span>{{ t('normal') }}</span>
-          <span style="color: #f96868">
-            ({{ t('paying_players_review') }})
-          </span>
+          <span style="color: #f96868">({{ t('paying_players_review') }})</span>
         </el-radio>
         <el-radio label="2">{{ t('plugin') }}</el-radio>
         <el-radio label="3">{{ t('refund') }}</el-radio>
@@ -34,9 +32,7 @@
       <el-radio-group v-model="formModel.ban_reason">
         <el-radio label="4">{{ t('buy_resources') }}</el-radio>
         <el-radio label="5">{{ t('surrogate') }}</el-radio>
-        <el-radio label="6">
-          {{ t('sensitive_word_filtering') }}
-        </el-radio>
+        <el-radio label="6">{{ t('sensitive_word_filtering') }}</el-radio>
       </el-radio-group>
     </el-form-item>
     <el-form-item :label="t('ban_duration')" prop="ban_duration" required>
@@ -46,8 +42,7 @@
           :key="duration.value"
           :label="duration.label"
           :value="duration.value"
-        >
-        </el-option>
+        ></el-option>
       </el-select>
     </el-form-item>
     <el-form-item label="Ids" prop="ban_ids" required>
@@ -61,7 +56,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, unref, watch } from 'vue'
+import { defineComponent, reactive, ref, unref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 export default defineComponent({

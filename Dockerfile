@@ -1,15 +1,15 @@
-FROM node:14-alpine
-
-WORKDIR /app
-
-COPY . .
+FROM node:16-alpine
 
 RUN yarn global add serve
 
-RUN yarn 
+# ENV NODE_OPTIONS=--max-old-space-size=10240
 
-RUN yarn build
+WORKDIR /frontend
 
-EXPOSE 8080
+COPY . .
 
-CMD [ "serve", "dist" ]
+RUN yarn && node node_modules/esbuild/install.js && yarn build
+
+EXPOSE 5000
+
+CMD serve dist

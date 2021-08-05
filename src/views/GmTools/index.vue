@@ -7,9 +7,6 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'KgGmTools',
-  setup(props) {
-    // do something
-  },
 })
 </script>
 

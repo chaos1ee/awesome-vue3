@@ -111,12 +111,12 @@ styleImport({
       libraryName: 'element-plus',
       esModule: true,
       ensureStyleFile: true,
-      resolveStyle: (name) => {
+      resolveStyle: name => {
         name = name.slice(3)
         // 修改这一行的地址，将它指到主题文件所在的目录
         return `./src/styles/element-plus/${name}.css`
       },
-      resolveComponent: (name) => {
+      resolveComponent: name => {
         return `element-plus/lib/${name}`
       },
     },
@@ -172,7 +172,7 @@ app.use(ElMenu)
 
 本项目已经支持国际化，根据需要在 /src/locales 目录添加翻译文件即可。
 
-建议文件名称格式为 “[语言代码].yaml”，比如简体中文的语言代码为“zh-CN”(参考 [语言代码表](http://www.lingoes.net/zh/translator/langcode.htm))，文件名为“zh-CN.yaml”。
+建议文件名称格式为 “[语言代码].yaml”，比如简体中文的语言代码为“zh-cn”(参考 [语言列表](https://github.com/element-plus/element-plus/tree/dev/packages/locale/lang))，文件名为“zh-cn.yaml”。
 
 项目默认的语言为“zh-CN”，可以根据需要在 /src/main.ts 中配置默认语言。
 
@@ -316,7 +316,7 @@ tsconfig.json
 
 网上有很多开放的网站可以下载图标，这里以 [iconfont](https://www.iconfont.cn/) 为例。
 
-将网站上的图标加入到购物车。
+将网站上的图标加入到 [项目](https://at.alicdn.com/t/project/2716945/639fe019-135f-40d6-9b3b-14649c69c89d.html?spm=a313x.7781069.1998910419.35)。
 
 ![cart](public/images/iconfont-cart.png)
 

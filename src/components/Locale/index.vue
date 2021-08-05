@@ -1,8 +1,8 @@
 <template>
   <el-dropdown v-if="!hidden" class="pr-4" @command="setLocale($event)">
-    <span style="color: #fff">
+    <div class="text-primary">
       {{ t('languages') }}<i class="el-icon-arrow-down el-icon--right"></i>
-    </span>
+    </div>
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item

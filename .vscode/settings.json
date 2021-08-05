@@ -16,10 +16,7 @@
   },
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
+    "source.fixAll.eslint": true
   },
   "eslint.validate": ["javascript", "javascriptreact", "vue"],
   "files.autoSave": "afterDelay",
@@ -38,7 +35,13 @@
     "vue-html": "html"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "i18n-ally.localesPaths": ["src/locales"],
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.sourceLanguage": "zh-CN"
+  "editor.minimap.maxColumn": 80,
+  "scssFormatter.printWidth": 80,
+  "volar.formatting.printWidth": 80,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

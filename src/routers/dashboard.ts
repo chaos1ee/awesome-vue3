@@ -10,7 +10,7 @@ export default [
     component: () => import('/views/Dashboard/index.vue'),
     meta: {
       name: 'dashboard',
-      icon: 'grape',
+      icon: 'dashboard',
       order: 1,
     },
   },
