@@ -9,6 +9,7 @@
       :active-text-color="activeTextColor"
       :router="true"
       :default-active="activePath"
+      :collapse-transition="true"
     >
       <kg-nav-items :routes="routes"></kg-nav-items>
     </el-menu>
@@ -42,9 +43,10 @@ export default defineComponent({
     const store = useStore()
     const route = useRoute()
     const router = useRouter()
+
     const routes = router.options.routes
       .filter(
-        (route) => route.path !== '/' && !route.path.startsWith('/:patchMatch')
+        route => route.path !== '/' && !route.path.startsWith('/:patchMatch'),
       )
       .sort((a, b) => {
         return (
@@ -69,6 +71,6 @@ export default defineComponent({
 }
 
 .el-menu-vertical:not(.el-menu--collapse) {
-  width: 240px;
+  width: 256px;
 }
 </style>

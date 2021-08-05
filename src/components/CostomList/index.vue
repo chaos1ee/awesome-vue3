@@ -1,25 +1,29 @@
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="player_id" :label="t('player_id')">
-    </el-table-column>
-    <el-table-column prop="player_name" :label="t('player_name')">
-    </el-table-column>
-    <el-table-column prop="hero_level" :label="t('hero_level')">
-    </el-table-column>
-    <el-table-column prop="city_level" :label="t('city_level')">
-    </el-table-column>
-    <el-table-column prop="kg_tag" :label="t('kg_tag')"> </el-table-column>
-    <el-table-column prop="last_login" :label="t('last_login')">
-    </el-table-column>
-  </el-table>
+  <div>
+    <el-table :data="tableData" style="width: 100%">
+      <el-table-column prop="player_id" :label="t('player_id')">
+      </el-table-column>
+      <el-table-column prop="player_name" :label="t('player_name')">
+      </el-table-column>
+      <el-table-column prop="hero_level" :label="t('hero_level')">
+      </el-table-column>
+      <el-table-column prop="city_level" :label="t('city_level')">
+      </el-table-column>
+      <el-table-column prop="kg_tag" :label="t('kg_tag')"> </el-table-column>
+      <el-table-column prop="last_login" :label="t('last_login')">
+      </el-table-column>
+    </el-table>
+    <el-pagination background layout="prev, pager, next" :total="total">
+    </el-pagination>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
-  name: 'KgLogList',
+  name: 'KgCustomList',
   setup() {
     const { t } = useI18n()
 
@@ -61,6 +65,7 @@ export default defineComponent({
     return {
       t,
       tableData,
+      total: computed(() => tableData.length),
     }
   },
 })

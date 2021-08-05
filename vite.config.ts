@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, envDir)
 
   return {
+    name: 'App',
     envDir,
     plugins: [
       vue(),
@@ -25,8 +26,8 @@ export default defineConfig(({ mode }) => {
         },
       }),
       vueI18n({
-        globalSFCScope: false,
         include: resolve('src/locales/**'),
+        compositionOnly: false,
       }),
       styleImport({
         libs: [
@@ -34,11 +35,11 @@ export default defineConfig(({ mode }) => {
             libraryName: 'element-plus',
             esModule: true,
             ensureStyleFile: true,
-            resolveStyle: (name) => {
+            resolveStyle: name => {
               name = name.slice(3)
               return `./src/styles/element-plus/${name}.css`
             },
-            resolveComponent: (name) => {
+            resolveComponent: name => {
               return `element-plus/lib/${name}`
             },
           },
@@ -50,30 +51,27 @@ export default defineConfig(({ mode }) => {
         '/@': resolve('src'),
         '/components': resolve('src/components'),
         '/views': resolve('src/views'),
-        'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
     },
     server: {
       port: +env.VITE_PORT,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:4001',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api/, ''),
+        },
+      },
     },
     build: {
-      sourcemap: true,
+      minify: 'esbuild',
       rollupOptions: {
-        context: 'window',
+        context: 'this',
         output: {
           manualChunks: {
             jsonWorker: [`${prefix}/language/json/json.worker`],
-            // cssWorker: [`${prefix}/language/css/css.worker`],
-            // htmlWorker: [`${prefix}/language/html/html.worker`],
-            // tsWorker: [`${prefix}/language/typescript/ts.worker`],
             editorWorker: [`${prefix}/editor/editor.worker`],
           },
-        },
-        onwarn(warning, warn) {
-          if (warning.code === 'THIS_IS_UNDEFINED') {
-            return
-          }
-          warn(warning)
         },
       },
     },

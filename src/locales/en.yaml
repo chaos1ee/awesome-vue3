@@ -1,5 +1,5 @@
 en: English
-zh-CN: 简体中文
+zh-cn: 简体中文
 languages: Languages
 dashboard: Dashboard
 submit: Submit
@@ -10,7 +10,7 @@ player: Player
 action: Action
 player_management: Player Management
 player_list: Player List
-player_id: Player Id
+player_id: Player ID
 player_name: Player Name
 hero_level: Hero Level
 city_level: City Level
@@ -21,7 +21,6 @@ server_operation: Server Operation
 code: Code
 ip_white_list: IP White List
 fpid_white_list: Fpid White List
-already_latest_no_need_release: Already the latest version, no need to release
 gateway_management: Gateway Management
 ban_player: Ban Player
 ban_type: Ban Type
@@ -46,14 +45,53 @@ review: Review
 game_players_count: Game players counts
 search: Search
 view_log: View log
-activity: Activity
-reissue_rewards: Reissue rewards
-return_players: Return players
 gm_tools: GM Tools
-database_tool: Database Tool
-upload_file: Upload file
-upload_to_server: Upload to server
-select_files: Select files
-upload_tip: Only upload jpg/png files, and no more than 500kb
-xhr: XMLHttpRequest
-pay: Pay
+select_kindom_id: Please select Kindom ID
+please_input: Please input
+registration_date: Registration Date
+query: Query
+database_tool: Database tool
+player_detail: Player detail
+ban_login: Ban Login
+ban_chat: Ban Chat
+back: Back
+info: Info
+nickname: Nickname
+avatar: Avatar
+funplus_id: Funplus Id
+privilege: Privilege
+race: Race
+end_novice: End novice
+level: Level
+exp: Experience
+language: Language
+vip_level: Vip Level
+alliance: Alliance
+guild: Guild
+kingdom_id: Kindom ID
+x_y_axis: X-axis Y-axis
+gender: Gender
+building_id: Building ID
+open_permanent_protective_cover: Open the permanent protective cover
+repair_alliance_data: Repair alliance data
+reset_portrait: Reset Portrait
+reset_fpid: Reset Fpid
+reason: Reason
+memo: Memo
+end_time: End time
+resources: Resources
+crystal: Crystal
+grain: Grain
+wood: Wood
+stone: Stone
+gold: Gold
+basic: Basic
+other: Other
+lord_experience: Lord experience
+talent_points: Talent points
+td_research_technology_points: TD research technology points
+action_points: Action points
+hero_experience: Hero experience
+physical_strength: Physical strength
+male: Male
+female: Female

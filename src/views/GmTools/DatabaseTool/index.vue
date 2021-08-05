@@ -7,10 +7,11 @@
       :closable="false"
     ></el-alert>
   </div>
-
-  <div class="absolute top-20 bottom-8 right-6 left-6">
-    <kg-editor :value="data" :options="options"></kg-editor>
-  </div>
+  <el-card>
+    <div class="h-80">
+      <kg-editor :value="data" :options="options"></kg-editor>
+    </div>
+  </el-card>
 </template>
 
 <script lang="ts">
@@ -31,7 +32,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-// add your custom css styles here
-</style>

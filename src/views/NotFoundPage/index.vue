@@ -1,17 +1,15 @@
 <template>
-  <div class="text-2xl font-bold">404 - Not Found</div>
-  <div>请检查是否已经在 Vue Router 中注册现在的 Path</div>
+  <div class="text-2xl font-bold">404 - Page Not Found</div>
+  <div>
+    The page you are trying to reach may have been deleted. Please try a
+    different URL.
+  </div>
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line prettier/prettier
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'KgNotFoundPage',
 })
 </script>
-
-<style lang="scss" scoped>
-// add your custom css styles here
-</style>

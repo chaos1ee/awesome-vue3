@@ -1,5 +1,10 @@
 module.exports = {
   root: true,
+  env: {
+    node: true,
+    browser: true,
+  },
+  plugins: ['prettier'],
   parserOptions: {
     parser: require.resolve('@typescript-eslint/parser'),
     extraFileExtensions: ['.vue'],
@@ -13,9 +18,10 @@ module.exports = {
     '@vue/prettier/@typescript-eslint',
   ],
   rules: {
-    'no-debugger': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'vue/component-name-in-template-casing': [
       'error',
       'kebab-case',
@@ -26,8 +32,9 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        vueIndentScriptAndStyle: false,
+        printWidth: 80,
       },
     ],
+    'vue/script-setup-uses-vars': 'off',
   },
 }
