@@ -95,3 +95,10 @@ hero_experience: 英雄经验
 physical_strength: 体力
 male: 男性
 female: 女性
+global_configuration: 全局配置
+server_management: 服务器管理
+strategy_list: 策略列表
+name: 名称
+basic_info: 基础信息
+connection_info: 连接信息
+status: 状态

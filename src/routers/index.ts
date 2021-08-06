@@ -28,14 +28,9 @@ const router = createRouter({
 })
 
 router.afterEach(to => {
-  const prefix = import.meta.env.VITE_DOCUMENT_TITLE as string
-  const name = to.meta.name as string
-
-  if (name) {
-    document.title = `${prefix} | ${i18n.global.t(name)}`
-  } else {
-    document.title = prefix
-  }
+  const title = import.meta.env.VITE_DOCUMENT_TITLE as string
+  const suffix = to.meta.name as string
+  document.title = suffix ? `${title} | ${i18n.global.t(suffix)}` : title
 })
 
 export default router

@@ -19,7 +19,7 @@ import { defineComponent, ref } from 'vue'
 import KgEditor, { EditorOptions } from '/components/Editor/index.vue'
 
 export default defineComponent({
-  name: 'KgDatabaseTool',
+  name: 'KgGlobalConfiguration',
   components: { KgEditor },
   setup() {
     return {

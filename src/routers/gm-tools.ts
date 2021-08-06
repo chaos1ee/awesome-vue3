@@ -7,9 +7,9 @@ export default [
     meta: { name: 'gm_tools', icon: 'tools' },
     children: [
       {
-        path: 'database_tool',
-        component: () => import('/views/GmTools/DatabaseTool/index.vue'),
-        meta: { name: 'database_tool' },
+        path: 'global_configuration',
+        component: () => import('/views/GmTools/GlobalConfiguration/index.vue'),
+        meta: { name: 'global_configuration' },
       },
     ],
   },
