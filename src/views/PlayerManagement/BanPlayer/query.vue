@@ -39,7 +39,7 @@
     <el-table-column prop="memo" :label="t('memo')"></el-table-column>
     <el-table-column prop="end_time" :label="t('end_time')" width="200px">
       <template #default="scope">
-        {{ format(scope.row.end_time) }}
+        {{ formatStandard(scope.row.end_time) }}
       </template>
     </el-table-column>
   </el-table>
@@ -49,7 +49,7 @@
 import { defineComponent, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { KgFilterWrap } from '/components/index'
-import dayjs from 'dayjs'
+import { formatStandard } from '/@/utils'
 
 export default defineComponent({
   name: 'KgPlayerQuery',
@@ -103,9 +103,7 @@ export default defineComponent({
           value: 2,
         },
       ],
-      format(timeStamp: number) {
-        return dayjs(new Date(timeStamp)).format('YYYY-MM-DD HH:mm:ss')
-      },
+      formatStandard,
     }
   },
 })

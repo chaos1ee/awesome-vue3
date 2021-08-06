@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center bg-white h-12">
+  <div class="flex items-center justify-center bg-white">
     <span :data-text="'&copy;&nbsp;' + copywrite"></span>
   </div>
 </template>

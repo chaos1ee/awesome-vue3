@@ -15,7 +15,7 @@
     <el-table-column prop="kid" label="Kindom Id"> </el-table-column>
     <el-table-column :label="t('registration_date')">
       <template #default="scope">
-        {{ format(scope.row.createTime) }}
+        {{ formatStandard(scope.row.createTime) }}
       </template>
     </el-table-column>
   </el-table>
@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import dayjs from 'dayjs'
+import { formatStandard } from '/@/utils'
 
 export default defineComponent({
   name: 'KgPlayerTable',
@@ -39,9 +39,7 @@ export default defineComponent({
 
     return {
       t,
-      format(timeStamp: string) {
-        return dayjs(timeStamp).format('YYYY-MM-DD HH:mm:ss')
-      },
+      formatStandard,
     }
   },
 })

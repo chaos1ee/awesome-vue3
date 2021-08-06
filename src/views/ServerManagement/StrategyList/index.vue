@@ -42,7 +42,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import dayjs from 'dayjs'
 
 export default defineComponent({
   name: 'KgStrategyList',
@@ -98,9 +97,6 @@ export default defineComponent({
     return {
       t,
       tableData,
-      format(timeStamp: string) {
-        return dayjs(timeStamp).format('YYYY-MM-DD HH:mm:ss')
-      },
       total: tableData.length,
     }
   },

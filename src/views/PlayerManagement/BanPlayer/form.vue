@@ -140,8 +140,6 @@ export default defineComponent({
 
       try {
         await form.validate()
-        const { ban_type } = formModel
-        console.log(ban_type)
       } catch (err) {
         console.error(err)
       }
