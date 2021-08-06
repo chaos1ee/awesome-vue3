@@ -84,10 +84,10 @@
         </a>
       </el-descriptions-item>
       <el-descriptions-item :label="t('registration_date')">{{
-        format(data.registration_date)
+        formatStandard(data.registration_date)
       }}</el-descriptions-item>
       <el-descriptions-item :label="t('last_login')">{{
-        format(data.last_login)
+        formatStandard(data.last_login)
       }}</el-descriptions-item>
       <el-descriptions-item :label="t('building_id')">{{
         data.building_id
@@ -102,7 +102,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import dayjs from 'dayjs'
+import { formatStandard } from '/@/utils'
 
 const MOCK_DATA = {
   funplus_id: 0,
@@ -146,9 +146,7 @@ export default defineComponent({
       t,
       loading,
       data: MOCK_DATA,
-      format(timeStamp: number) {
-        return dayjs(new Date(timeStamp)).format('YYYY-MM-DD HH:mm:ss')
-      },
+      formatStandard,
     }
   },
 })

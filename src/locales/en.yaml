@@ -95,3 +95,10 @@ hero_experience: Hero experience
 physical_strength: Physical strength
 male: Male
 female: Female
+global_configuration: Global Configuration
+server_management: Server Management
+strategy_list: Strategy List
+name: Name
+basic_info: Basic Info
+connection_info: Connection Info
+status: Status

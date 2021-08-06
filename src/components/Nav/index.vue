@@ -1,5 +1,5 @@
 <template>
-  <nav :style="{ backgroundColor }" style="border-right: 1px solid #e5e7eb">
+  <nav :style="{ backgroundColor }">
     <el-menu
       class="el-menu-vertical"
       :collapse="isCollapse"
