@@ -1,6 +1,6 @@
 # Frontend Template
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) ![GitHub repo size](https://img.shields.io/github/repo-size/chaos1ee/frontend-template) ![GitHub top language](https://img.shields.io/github/languages/top/chaos1ee/frontend-template)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) ![GitHub repo size](https://img.shields.io/github/repo-size/chaos1ee/awesome-vue3) ![GitHub top language](https://img.shields.io/github/languages/top/chaos1ee/awesome-vue3)
 
 该项目主要使用 Vue3 生态内的技术搭建而成，包括前端框架 Vue3、构建工具 Vite、Css 框架 TailwindCss 等等，Fork 该项目，快速开始前端开发。
 
