@@ -1,2 +1,2 @@
-export * from './xhr'
 export * from './player'
+export * from './kingdom'

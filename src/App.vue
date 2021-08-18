@@ -3,8 +3,8 @@
   <div class="flex h-screen pt-14">
     <kg-nav class="border-r z-50 overflow-auto"></kg-nav>
     <div class="flex-1 overflow-auto">
-      <main id="main" class="min-h-full px-6 pb-16">
-        <div v-if="routeName" class="py-4">
+      <main id="main" class="min-h-full pt-8 px-8 pb-16">
+        <div v-if="routeName" class="pb-6">
           <el-page-header v-if="showPageHeader" @back="goBack">
             <template #title>{{ t('back') }}</template>
             <template #content>{{ t(routeName) }}</template>
@@ -28,7 +28,11 @@ import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   name: 'App',
-  components: { KgHeader, KgNav, KgFooter },
+  components: {
+    KgHeader,
+    KgNav,
+    KgFooter,
+  },
   setup() {
     const { t } = useI18n()
     const route = useRoute()

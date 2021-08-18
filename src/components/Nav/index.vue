@@ -44,17 +44,9 @@ export default defineComponent({
     const route = useRoute()
     const router = useRouter()
 
-    const routes = router.options.routes
-      .filter(
-        route => route.path !== '/' && !route.path.startsWith('/:patchMatch'),
-      )
-      .sort((a, b) => {
-        return (
-          /** 升序排列 **/
-          (Number(a.meta?.order) || Number.MAX_SAFE_INTEGER) -
-          (Number(b.meta?.order) || Number.MAX_SAFE_INTEGER)
-        )
-      })
+    const routes = router.options.routes.filter(
+      route => route.path !== '/' && !route.path.startsWith('/:patchMatch'),
+    )
 
     return {
       routes,

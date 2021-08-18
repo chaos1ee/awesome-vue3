@@ -4,27 +4,16 @@
     <el-skeleton v-if="loading" :rows="5" animated />
     <template v-else>
       <div class="grid grid-cols-2 gap-6">
-        <el-descriptions
-          :column="2"
-          :title="t('basic')"
-          direction="vertical"
-          border
-          class="mb-6"
-        >
-          <el-descriptions-item :label="t('crystal')"
-            >1000</el-descriptions-item
+        <el-descriptions :column="2" :title="t('basic')" border class="mb-6">
+          <el-descriptions-item
+            v-for="item in data"
+            :key="item.id"
+            :label="item.name"
           >
-          <el-descriptions-item :label="t('grain')">1000</el-descriptions-item>
-          <el-descriptions-item :label="t('wood')">1000</el-descriptions-item>
-          <el-descriptions-item :label="t('stone')">1000</el-descriptions-item>
-          <el-descriptions-item :label="t('gold')">1000</el-descriptions-item>
+            {{ item.num }}
+          </el-descriptions-item>
         </el-descriptions>
-        <el-descriptions
-          :column="2"
-          :title="t('other')"
-          direction="vertical"
-          border
-        >
+        <el-descriptions :column="2" :title="t('other')" border>
           <el-descriptions-item :label="t('lord_experience')"
             >1000</el-descriptions-item
           >
@@ -52,21 +41,47 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { playerApi } from '/@/apis'
 
 export default defineComponent({
   name: 'KgPlayerResources',
+  props: {
+    uid: {
+      type: Number,
+      require: true,
+      default: 0,
+    },
+  },
   setup() {
     const { t } = useI18n()
-    const loading = ref(true)
 
-    new Promise(resolve => setTimeout(resolve, 2000)).then(() => {
+    const loading = ref()
+    const data = ref()
+
+    ;(async () => {
+      loading.value = true
+      data.value = await playerApi.getPackage({ uid: 1 })
       loading.value = false
-    })
+    })()
 
     return {
       t,
+      data,
       loading,
     }
   },
 })
 </script>
+
+<style lang="scss" scoped>
+::v-deep(.el-descriptions__label) {
+  width: 200px;
+}
+</style>
+
+<i18n lang="yaml">
+en:
+  td_research_technology_points: TD research technology points
+zh-cn:
+  td_research_technology_points: TD 研究科技点数
+</i18n>

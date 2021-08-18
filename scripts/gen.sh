@@ -1,34 +1,39 @@
-#! /bin/bash
-# Generate a Vue Component.
+#!/bin/bash
+# New a Vue component.
 
-TYPE=$1;
+usage() {
+  echo "Usage:"
+  echo "  gen.sh [-n NAME] [-d DIR]"
+  echo ""
+  echo "Description:"
+  echo "  New a Vue component."
+  echo "  -n the name of component."
+  echo "  -d the dirname of component."
+  exit 2
+}
 
-NAME=$2;
+while getopts 'n::d:' OPT; do
+  case $OPT in
+    n) NAME="$OPTARG";;
+    d) DIRNAME="$OPTARG";;
+    ?) usage;;
+  esac
+done
 
-if [ "$TYPE" != "c" ] && [ "$TYPE" != "v" ]; then 
-  echo 'Type must be "c" or "v".'
+if [[ "$DIRNAME" =~ [[:space]]+ ]] || [ "$DIRNAME" == "" ]; then
+  DIRNAME="$( cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../src/components" && pwd )/${NAME}"
+else
+  DIRNAME="$DIRNAME/$NAME"
+fi
+
+if [ -d "$DIRNAME" ]; then
+  echo "Directory \"$DIRNAME\" already exists."
   exit 1
 fi
 
-if [[ "$NAME" =~ [[:space]]+ ]] || [ "$NAME" == "" ]; then
-  echo "Name should not be empty."
-  exit 1
-fi
+mkdir -p "$DIRNAME"
 
-DIRNAME=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd );
-
-TARGET_DIR=$([ "$TYPE" == "c" ] && echo "components" || echo "views")
-
-TARGET="$( cd "${DIRNAME}/../src/${TARGET_DIR}" && pwd )/${NAME}"
-
-if [ -d "$TARGET" ]; then
-  echo "Component '${NAME}' already exists, please change the name and try again."
-  exit 1
-fi
-
-mkdir -p "$TARGET"
-
-cat > $TARGET/index.vue <<EOF
+cat > $DIRNAME/index.vue <<EOF
 <template>
   <div></div>
 </template>
@@ -39,12 +44,12 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'Kg${NAME}',
   setup(props) {
-    // do something
+    // doing something
   },
 })
 </script>
 
 <style lang="scss" scoped>
-// add your custom css styles here
+// adding your custom css styles here
 </style>
 EOF
