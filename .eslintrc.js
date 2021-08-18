@@ -3,6 +3,7 @@ module.exports = {
   env: {
     node: true,
     browser: true,
+    es2017: true,
   },
   plugins: ['prettier'],
   parserOptions: {
@@ -20,8 +21,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'vue/component-name-in-template-casing': [
       'error',
       'kebab-case',
@@ -35,6 +34,5 @@ module.exports = {
         printWidth: 80,
       },
     ],
-    'vue/script-setup-uses-vars': 'off',
   },
 }

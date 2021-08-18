@@ -1,15 +1,23 @@
 import axios from 'axios'
 import { ElNotification } from 'element-plus'
+import i18n from '../i18n'
+import store from '../stores'
+
+const CancelToken = axios.CancelToken
 
 const instance = axios.create({
-  baseURL: (import.meta.env.VITE_BASE_URL as string) || '/',
-  timeout: 15000,
+  baseURL: import.meta.env.DEV ? import.meta.env.VITE_REQUEST_PREFIX + '' : '/',
+  timeout: 10000,
 })
 
 instance.interceptors.request.use(
   config => {
     // 请求阶段的配置可以在此注入，如 token
     // config.headers['Authorization'] = 'Bearer xxx'
+
+    config.cancelToken = new CancelToken(c => {
+      store.commit('xhr/inject', c)
+    })
 
     if (config.method === 'POST') {
       config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -23,41 +31,37 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   response => {
-    // todo: 想根据业务需要，对响应结果预先处理的，都放在这里
-
-    if (response.data.code !== 200) {
+    if (response.data.code !== 0) {
       ElNotification({
-        title: 'Bad Request',
-        message: response.data.message,
-        duration: 5,
+        type: 'error',
+        title: response.data.code,
+        message: response.data.msg,
       })
     }
-    return response.data
+
+    return response.data.data
   },
   err => {
+    if (err.message?.includes('timeout')) {
+      ElNotification({
+        type: 'error',
+        title: i18n.global.t('timeout'),
+        message: i18n.global.t('timeout_message'),
+        duration: 5000,
+      })
+    }
+
     if (err.response) {
-      // 响应错误码处理
-      switch (err.response.status) {
-        case '403':
-          // todo: handler server forbidden error
-          break
-        // todo: handler other status code
-        default:
-          err = Error('Unkown error')
-          break
-      }
-
-      // ElNotification({
-      //   title: 'Bad Request',
-      //   message: err.error.message,
-      //   duration: 5,
-      // })
-
-      return Promise.reject(err.response)
+      ElNotification({
+        type: 'error',
+        title: err.response.status,
+        message: err.response.statusText,
+        duration: 5000,
+      })
     }
 
     return Promise.reject(err)
   },
 )
 
-export default instance
+export const request = instance

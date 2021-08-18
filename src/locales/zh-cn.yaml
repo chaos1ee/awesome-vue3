@@ -16,41 +16,22 @@ hero_level: 玩家等级
 city_level: 城市等级
 kg_tag: Kg Tag
 last_login: 上次登录时间
-system_management: 系统管理
-server_operation: 服务器维护管理
-code: 代码
-ip_white_list: IP 白名单
-fpid_white_list: Fpid 白名单
-gateway_management: 网关管理
 ban_player: 封禁玩家
-ban_type: 封禁类型
-player_type: 玩家类型
-ban_reason: 封禁原因
-ban_duration: 封禁时长
-please_input_id: 请输入Id
 normal: 普通
-paying_players_review: 付费玩家需要 review
-plugin: 外挂
-refund: 退款
-buy_resources: 买资源
-surrogate: 代充
-sensitive_word_filtering: 敏感词过滤
 minute: 分钟
 hour: 小时
 day: 天
 forever: 永久
 ban: 封禁
+unban: 解禁
 log: 日志
 review: 审核
-game_players_count: 游戏玩家数量统计
 search: 搜索
-view_log: 查看日志
 gm_tools: GM 工具
 select_kindom_id: 请选择 Kindom ID
 please_input: 请输入
 registration_date: 注册日期
 query: 查询
-database_tool: 数据库工具
 player_detail: 玩家详情
 ban_login: 禁止登录
 ban_chat: 禁止聊天
@@ -71,11 +52,6 @@ guild: 工会
 kingdom_id: Kindom ID
 x_y_axis: X-axis Y-axis
 gender: 性别
-building_id: Building ID
-open_permanent_protective_cover: 开启永久保护罩
-repair_alliance_data: 修复联盟数据
-reset_portrait: 重置 Portrait
-reset_fpid: 重置 Fpid
 reason: 原因
 memo: 备忘
 end_time: 结束时间
@@ -89,7 +65,6 @@ basic: 基本
 other: 其它
 lord_experience: 领主经验
 talent_points: 天赋点数
-td_research_technology_points: TD 研究科技点数
 action_points: 行动点数
 hero_experience: 英雄经验
 physical_strength: 体力
@@ -102,3 +77,18 @@ name: 名称
 basic_info: 基础信息
 connection_info: 连接信息
 status: 状态
+kingdom_list: Kingdom 列表
+version_control: 版本控制
+etcd_info: Etcd 信息
+kingdom_state: Kingdom 状态
+mail_management: 邮件管理
+system_mail: 系统邮件
+ban_type: 封禁类型
+left_parenthesis: （
+right_parenthesis: ）
+timeout: 超时
+timeout_message: 请求超时，请稍后重试
+cancel: 取消
+confirm: 确定
+left_ban_player: 解禁玩家
+extension: 扩展

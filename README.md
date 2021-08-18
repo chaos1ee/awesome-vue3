@@ -1,6 +1,6 @@
 # Frontend Template
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) ![GitHub repo size](https://img.shields.io/github/repo-size/chaos1ee/frontend-template) ![GitHub top language](https://img.shields.io/github/languages/top/chaos1ee/frontend-template)
 
 该项目主要使用 Vue3 生态内的技术搭建而成，包括前端框架 Vue3、构建工具 Vite、Css 框架 TailwindCss 等等，Fork 该项目，快速开始前端开发。
 
@@ -49,7 +49,7 @@
 
 ### 安装 Yarn
 
-项目使用 [Yarn](https://yarnpkg.com/) 来管理依赖包，而是不是 Node.js 自带的 Npm。
+项目使用 [Yarn](https://yarnpkg.com/) 来管理依赖包，而是不是 Node.js 自带的 Npm，因为 Yarn 下载依赖包的速度更快。
 
 ```shell
 npm install -g yarn
@@ -80,15 +80,27 @@ yarn build
 ### 生成新的组件
 
 ```shell
-yarn gen <type> <name>
+yarn gen [-n name] [-d dir]
 ```
 
-| 名称 | 可选值            | 含义                                                                        |
-| ---- | ----------------- | --------------------------------------------------------------------------- |
-| type | “c” \| "v"        | "c" , "component"的首字母，表示业务组件；“v”， "view"的首字母，表示视图组件 |
-| name | PascalCase string | 组件名称                                                                    |
+| 名称 | require | 含义                                    |
+| ---- | ------- | --------------------------------------- |
+| n    | true    | 组件名称                                |
+| d    | false   | 组件所在的目录，默认“./src/components/” |
 
 具体内容见 /scripts/gen.sh 。
+
+## 运行 Docker 镜像
+
+// TODO: 补充 Docker 方式说明
+
+## 配置环境变量
+
+TODO: 部署环境变量说明
+
+## Mock
+
+// TODO: add something
 
 ## 配置主题
 
@@ -126,7 +138,7 @@ styleImport({
 
 ## 配置导航栏
 
-前端路由配置文件保存在 /src/routers 目录中，本项目根据前端路由自动生产导航栏，只需要在路由的 meta 元信息中加入特定的字段。
+本项目根据前端路由自动生产导航栏，前端路由配置文件保存在 /src/routers 目录中，只需要在路由的 meta 元信息中加入特定的字段。
 
 比如：
 
@@ -144,11 +156,11 @@ styleImport({
 
 meta 元信息解释
 
-| 字段  | 类型   | 必填 | 含义                                                                       |
-| ----- | ------ | ---- | -------------------------------------------------------------------------- |
-| name  | string | yes  | 导航名称，供 i18n 翻译的 key                                               |
-| icon  | string | no   | ElIcon 图标名称，参照[图标使用方式](#图标使用方式)，注意省略“el-icon-”前缀 |
-| order | number | no   | 根据此字段升序排列同层级的导航栏项目，默认值 Number.MAX_SAFE_INTEGER       |
+| 字段           | 类型    | 默认值 | 必填 | 含义                                                                       |
+| -------------- | ------- | ------ | ---- | -------------------------------------------------------------------------- |
+| name           | string  | -      | 是   | 导航名称，供 i18n 翻译的 key                                               |
+| icon           | string  | -      | 否   | ElIcon 图标名称，参照[图标使用方式](#图标使用方式)，注意省略“el-icon-”前缀 |
+| showPageHeader | boolean | false  | 否   | 是否在页面的头部显示“el-page-header” 组件                                  |
 
 ## 图标使用方式
 
@@ -178,14 +190,14 @@ app.use(ElMenu)
 
 ```typescript
 const i18n = createI18n({
-  locale: /* 默认语言 */ 'zh-CN',
+  locale: /* 默认语言 */ 'zh-cn',
   messages,
 })
 ```
 
 创建翻译文件并定义了 key 之后，可以按照下面的方式使用:
 
-zh-CN.yaml
+zh-cn.yaml
 
 ```yaml
 languages: 多语种
@@ -246,10 +258,6 @@ git commit -m "feat: some new features"
 ```
 
 项目中集成了 git message 校验工具，因此 commit 的时候一定要按照上面的规范填写 git message，不然会失败。也可以使用命令 `git add . && yarn commit` 来提交，这条命令会提供一个交互式的界面，操作更方便一些。
-
-## 配置环境变量
-
-TODO: 部署环境变量说明
 
 ## 部署
 
@@ -322,37 +330,12 @@ tsconfig.json
 
 然后点击“下载代码”，将下载下来的代码中的 iconfont.ttf 与 iconfont.css 文件移到项目的 /src/styles 目录中。
 
-原始的 css 文件大概如下：
-
-```css
-@font-face {
-  font-family: 'iconfont'; /* Project id  */
-  src: url('iconfont.ttf?t=1626242578072') format('truetype');
-}
-
-.iconfont {
-  font-family: 'iconfont' !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-jisuanqi::before {
-  content: '\e8ab';
-}
-
-.icon-kabao::before {
-  content: '\e8ac';
-}
-```
-
 先把下载下来的字体文件 iconfont.ttf 导入进来。
 
 ```css
 @font-face {
-  font-family: element-icons;
-  src: url(iconfont.ttf) format('truetype');
+  font-family: 'element-icons';
+  src: url('iconfont.ttf') format('truetype');
 }
 ```
 
@@ -368,31 +351,10 @@ tsconfig.json
 }
 ```
 
-改造后的 css 文件大致如下。
-
-```css
-@font-face {
-  font-family: element-icons;
-  src: url(iconfont.ttf) format('truetype');
-}
-
-.el-icon-jisuanqi::before {
-  content: '\e8ab';
-}
-
-.el-icon-kabao::before {
-  content: '\e8ac';
-}
-```
-
 最后，我们将这个 css 文件引入到项目 /src/styles/index.scss 中，就可以在项目中使用引入的图标啦。
 
 使用方式：
 
 ```html
-<el-icon name="jisuanqi"></el-icon>
-
-<!-- or -->
-
 <i class="el-icon-jisuanqi"></i>
 ```

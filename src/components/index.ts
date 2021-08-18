@@ -6,6 +6,7 @@ import KgEditor from './Editor/index.vue'
 import KgLogo from './Logo/index.vue'
 import KgFilterWrap from './FilterWrap/index.vue'
 import KgFooter from './Footer/index.vue'
+import KgRouterView from './RouterView/index.vue'
 
 export {
   KgCustomList,
@@ -16,4 +17,5 @@ export {
   KgLogo,
   KgFilterWrap,
   KgFooter,
+  KgRouterView,
 }

@@ -9,14 +9,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, nextTick, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Chart, { ChartItem } from 'chart.js/auto'
 
 export default defineComponent({
   name: 'KgDashboard',
   setup() {
-    const { t } = useI18n()
+    const { t } = useI18n({ inheritLocale: true })
     const chartRef = ref<ChartItem>()
 
     let chart: Chart | null = null
@@ -60,7 +60,7 @@ export default defineComponent({
         chart.destroy()
       }
 
-      draw()
+      nextTick(draw)
     })
 
     return {
@@ -70,3 +70,10 @@ export default defineComponent({
   },
 })
 </script>
+
+<i18n lang="yaml">
+en:
+  game_players_count: Game players counts
+zh-cn:
+  game_players_count: 游戏玩家数量统计
+</i18n>

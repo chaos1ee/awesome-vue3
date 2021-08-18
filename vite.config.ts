@@ -14,20 +14,19 @@ const prefix = `monaco-editor/esm/vs`
 export default defineConfig(({ mode }) => {
   const envDir = resolve('.envs')
   const env = loadEnv(mode, envDir)
+  const requestPrefix = env.VITE_REQUEST_PREFIX
 
   return {
-    name: 'App',
+    name: 'Wod',
     envDir,
     plugins: [
       vue(),
-      injectHtml({
-        injectData: {
-          title: env.VITE_DOCUMENT_TITLE,
-        },
-      }),
       vueI18n({
         include: resolve('src/locales/**'),
-        compositionOnly: false,
+        defaultSFCLang: 'yaml',
+      }),
+      injectHtml({
+        injectData: { title: env.VITE_DOCUMENT_TITLE },
       }),
       styleImport({
         libs: [
@@ -56,20 +55,22 @@ export default defineConfig(({ mode }) => {
     server: {
       port: +env.VITE_PORT,
       proxy: {
-        '/api': {
-          target: 'http://localhost:4001',
+        [requestPrefix]: {
+          target: 'http://kg-wod-gm-dev.kingsgroup.cn:33005',
           changeOrigin: true,
-          rewrite: path => path.replace(/^\/api/, ''),
+          rewrite: path => path.replace(new RegExp('^' + requestPrefix), ''),
         },
       },
     },
     build: {
-      minify: 'esbuild',
+      sourcemap: true,
       rollupOptions: {
-        context: 'this',
         output: {
           manualChunks: {
             jsonWorker: [`${prefix}/language/json/json.worker`],
+            cssWorker: [`${prefix}/language/css/css.worker`],
+            htmlWorker: [`${prefix}/language/html/html.worker`],
+            tsWorker: [`${prefix}/language/typescript/ts.worker`],
             editorWorker: [`${prefix}/editor/editor.worker`],
           },
         },

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "esnext",
+    "target": "es2017",
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
@@ -19,14 +20,8 @@
       {
         "name": "@vuedx/typescript-plugin-vue"
       }
-    ]
+    ],
+    "typeRoots": ["./node_modules/@types", "./src/typings/"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "node_modules/element-plus/**/*.type.ts"
-  ],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts", "src/**/*.vue"]
 }

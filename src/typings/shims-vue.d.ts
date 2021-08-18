@@ -7,8 +7,3 @@ declare module '*.vue' {
   >
   export default component
 }
-
-declare module '*.yaml' {
-  const data: any
-  export default data
-}
