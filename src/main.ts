@@ -1,11 +1,34 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './routers'
+import './styles/index.scss'
 import store from './stores/index'
 import i18n from './i18n'
-import ElementPlus from 'element-plus'
-import router from './routers'
-
-import './styles/index.scss'
+import {
+  ElAlert,
+  ElButton,
+  ElCard,
+  ElDialog,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElOption,
+  ElPageHeader,
+  ElPagination,
+  ElRadio,
+  ElRadioButton,
+  ElRadioGroup,
+  ElSelect,
+  ElSubmenu,
+  ElTable,
+  ElTableColumn,
+} from 'element-plus'
 
 if (import.meta.env.DEV) {
   import('./mock/browser').then(({ worker }) => {
@@ -18,11 +41,35 @@ if (import.meta.env.DEV) {
 
 const app = createApp(App)
 
-app.use(i18n)
 app.use(store)
 app.use(router)
+app.use(i18n)
 
-// FIXME: 因为 ElementPlus 国际化不能按需加载，所以暂时全部导入
-app.use(ElementPlus, { i18n: i18n.global.t })
+// 按需导入组件，完整的 ElementPlus 组件列表 https://github.com/element-plus/element-plus/tree/dev/packages
+;[
+  ElForm,
+  ElFormItem,
+  ElTable,
+  ElTableColumn,
+  ElButton,
+  ElPageHeader,
+  ElSelect,
+  ElOption,
+  ElMenu,
+  ElSubmenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElInput,
+  ElPagination,
+  ElCard,
+  ElRadio,
+  ElRadioButton,
+  ElRadioGroup,
+  ElDialog,
+  ElAlert,
+].forEach(app.use)
 
 app.mount('#app')
