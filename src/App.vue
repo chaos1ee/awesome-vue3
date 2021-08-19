@@ -9,7 +9,7 @@
             <template #title>{{ t('back') }}</template>
             <template #content>{{ t(routeName) }}</template>
           </el-page-header>
-          <div v-else class="h-6 leading-6 text-lg">
+          <div v-else class="h-6 leading-6 text-xl">
             {{ t(routeName) }}
           </div>
         </div>

@@ -92,3 +92,5 @@ cancel: Cancel
 confirm: Confirm
 left_ban_player: Left ban player
 extension: Extension
+send_mail: Send Mail
+receiver: Receiver

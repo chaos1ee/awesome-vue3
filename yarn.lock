@@ -535,6 +535,11 @@
   dependencies:
     chalk "^4.0.0"
 
+"@element-plus/icons@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@element-plus/icons/-/icons-0.0.11.tgz#9b187c002774548b911850d17fa5fc2f9a515f57"
+  integrity sha512-iKQXSxXu131Ai+I9Ymtcof9WId7kaXvB1+WRfAfpQCW7UiAMYgdNDqb/u0hgTo2Yq3MwC4MWJnNuTBEpG8r7+A==
+
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.3.tgz#9e42981ef035beb3dd49add17acb96e8ff6f394c"
@@ -845,11 +850,6 @@
   version "7.0.8"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.8.tgz#edf1bf1dbf4e04413ca8e5b17b3b7d7d54b59818"
   integrity sha512-YSBPTLTVm2e2OoQIDYx8HaeWJ5tTToLH67kXR7zYNGupXMEHa2++G8k+DczX2cFVgalypqtyZIcU19AFcmOpmg==
-
-"@types/lodash@^4.14.161":
-  version "4.14.172"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.172.tgz#aad774c28e7bfd7a67de25408e03ee5a8c3d028a"
-  integrity sha512-/BHF5HAx3em7/KkzVKm3LrsD6HZAXuXO1AJZQ3cRRBZj4oHZDviWPYu0aEplAqDFNHZPW6d3G7KN+ONcCCC7pw==
 
 "@types/mdast@^3.0.0":
   version "3.0.7"
@@ -1805,11 +1805,6 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chart.js@^3.4.1:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.5.0.tgz#6eb075332d4ebbbb20a94e5a07a234052ed6c4fb"
-  integrity sha512-J1a4EAb1Gi/KbhwDRmoovHTRuqT8qdF0kZ4XgwxpGethJHUdDrkqyPYwke0a+BuvSeUxPf8Cos6AX2AB8H8GLA==
-
 "chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.2, chokidar@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
@@ -2409,13 +2404,13 @@ electron-to-chromium@^1.3.723:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.788.tgz#7a304c8ebb11d30916a1a1c1b4a9bad3983ef232"
   integrity sha512-dbMIpX4E4/Gk4gzOh1GYS7ls1vGsByWKpIqLviJi1mSmSt5BvrWLLtSqpFE5BaC7Ef4NnI0GMaiddNX2Brw6zA==
 
-element-plus@1.0.2-beta.54:
-  version "1.0.2-beta.54"
-  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-1.0.2-beta.54.tgz#70eda3fc0ef4c28a1cdc6bffec8f9c34ef83cc16"
-  integrity sha512-XXgZMnVt2ECtLyxJLVMq+faTxcYKNy9ZTaQ4cgbITgR/iGF5iXPHHjn1J1DWNLIKJ0XQRo8atAM1fyOpJsyJzw==
+element-plus@1.0.2-beta.71:
+  version "1.0.2-beta.71"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-1.0.2-beta.71.tgz#148f16d5a0a800549989f7869bbf4d656c652d36"
+  integrity sha512-tlfbRORIav8gJcIpjZI5F6aJIVHIaDuGO6/vKu43lgYq4JS2JPNRTjvrSE2p4f5xLfaFNfOWjCS3sybXLfMg8g==
   dependencies:
+    "@element-plus/icons" "^0.0.11"
     "@popperjs/core" "^2.4.4"
-    "@types/lodash" "^4.14.161"
     async-validator "^3.4.0"
     dayjs "1.x"
     lodash "^4.17.20"
