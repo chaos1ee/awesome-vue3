@@ -49,6 +49,23 @@ const router = createRouter({
       ],
     },
     {
+      path: '/mail_management',
+      component: () => RouterView,
+      meta: { name: 'mail_management', icon: 'email' },
+      children: [
+        {
+          path: 'send_mail',
+          component: () => import(`/views/MailManagement/SendMail/index.vue`),
+          meta: { name: 'send_mail' },
+        },
+        {
+          path: 'system_mail',
+          component: () => import(`/views/MailManagement/SystemMail/index.vue`),
+          meta: { name: 'system_mail' },
+        },
+      ],
+    },
+    {
       path: '/gm_tools',
       component: () => RouterView,
       meta: {
@@ -63,18 +80,6 @@ const router = createRouter({
           meta: {
             name: 'global_configuration',
           },
-        },
-      ],
-    },
-    {
-      path: '/mail_management',
-      component: () => RouterView,
-      meta: { name: 'mail_management', icon: 'email' },
-      children: [
-        {
-          path: 'system_mail',
-          component: () => import(`/views/MailManagement/SystemMail/index.vue`),
-          meta: { name: 'system_mail' },
         },
       ],
     },

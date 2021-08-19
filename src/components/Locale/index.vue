@@ -20,31 +20,24 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'KgLocale',
   setup() {
+    const store = useStore()
     const { t, availableLocales, locale } = useI18n()
-
-    const setLocale = (command: string) => {
-      if (locale.value !== command) {
-        locale.value = command
-        localStorage.setItem('locale', command)
-
-        const localeChange = new CustomEvent('localeChange', {
-          detail: {
-            locale: command,
-          },
-        })
-        window.dispatchEvent(localeChange)
-      }
-    }
 
     return {
       t,
-      setLocale,
       locales: availableLocales,
       hidden: computed(() => availableLocales.length === 0),
+      setLocale(command: string) {
+        if (locale.value !== command) {
+          locale.value = command
+          store.commit('i18n/setLocale', command)
+        }
+      },
     }
   },
 })

@@ -92,3 +92,5 @@ cancel: 取消
 confirm: 确定
 left_ban_player: 解禁玩家
 extension: 扩展
+send_mail: 发送邮件
+receiver: 接收人

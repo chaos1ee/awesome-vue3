@@ -50,9 +50,63 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive, ref, unref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { computed, defineComponent, reactive, ref, unref, watch } from 'vue'
+import { useI18n, VueI18n } from 'vue-i18n'
+import { useStore } from 'vuex'
 import { playerApi } from '/@/apis'
+
+function returnDurationsOptions(t: VueI18n['tc']) {
+  return [
+    {
+      value: 1,
+      label: '1 ' + t('minute', 1),
+    },
+    {
+      value: 5,
+      label: '5 ' + t('minute', 5),
+    },
+    {
+      value: 30,
+      label: '30 ' + t('minute', 30),
+    },
+    {
+      value: 60,
+      label: '1 ' + t('hour', 1),
+    },
+    {
+      value: 12 * 60,
+      label: '12 ' + t('hour', 12),
+    },
+    {
+      value: 24 * 60,
+      label: '1 ' + t('day', 1),
+    },
+    {
+      value: 2 * 24 * 60,
+      label: '2 ' + t('day', 2),
+    },
+    {
+      value: 3 * 24 * 60,
+      label: '3 ' + t('day', 3),
+    },
+    {
+      value: 7 * 24 * 60,
+      label: '7 ' + t('day', 7),
+    },
+    {
+      value: 15 * 24 * 60,
+      label: '15 ' + t('day', 15),
+    },
+    {
+      value: 30 * 24 * 60,
+      label: '30 ' + t('day', 30),
+    },
+    {
+      value: -1,
+      label: t('forever'),
+    },
+  ]
+}
 
 export default defineComponent({
   name: 'KgBanPlayerDialog',
@@ -66,65 +120,14 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
+    const store = useStore()
     const { t } = useI18n({ inheritLocale: true })
-    const durations = ref(returnDurationsOptions())
+    const durations = ref(returnDurationsOptions(t))
 
-    window.addEventListener('localeChange', () => {
-      durations.value = returnDurationsOptions()
-    })
-
-    function returnDurationsOptions() {
-      return [
-        {
-          value: 1,
-          label: '1 ' + t('minute', 1),
-        },
-        {
-          value: 5,
-          label: '5 ' + t('minute', 5),
-        },
-        {
-          value: 30,
-          label: '30 ' + t('minute', 30),
-        },
-        {
-          value: 60,
-          label: '1 ' + t('hour', 1),
-        },
-        {
-          value: 12 * 60,
-          label: '12 ' + t('hour', 12),
-        },
-        {
-          value: 24 * 60,
-          label: '1 ' + t('day', 1),
-        },
-        {
-          value: 2 * 24 * 60,
-          label: '2 ' + t('day', 2),
-        },
-        {
-          value: 3 * 24 * 60,
-          label: '3 ' + t('day', 3),
-        },
-        {
-          value: 7 * 24 * 60,
-          label: '7 ' + t('day', 7),
-        },
-        {
-          value: 15 * 24 * 60,
-          label: '15 ' + t('day', 15),
-        },
-        {
-          value: 30 * 24 * 60,
-          label: '30 ' + t('day', 30),
-        },
-        {
-          value: -1,
-          label: t('forever'),
-        },
-      ]
-    }
+    watch(
+      () => store.state.i18n.locale,
+      () => (durations.value = returnDurationsOptions(t)),
+    )
 
     const formRef = ref<any>(null)
 
